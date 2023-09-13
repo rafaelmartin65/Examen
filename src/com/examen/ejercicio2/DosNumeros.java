@@ -17,27 +17,21 @@ import java.util.Scanner;
  */
 public class DosNumeros {
 
-	/**
-	 * @param args
-	 */
-	// Declara variables
+	
+	// Declara array de enteros
 	
 	static  int [] enteros = new int [10];
 	
-	
-	
+	// Inicializa 2 variables para almacenar los números solicitados
 	private static int numero1, numero2;
 	
 	public static void main(String[] args) {
-		
-		
-		
-		
-		// Declarar clase scanner
+	
+		// Declarar el objeto scanner para leer por teclado
 		
 		Scanner sc = new Scanner(System.in);
 		
-		// Solicita los número por teclado
+		// Solicita los dos número por teclado
 		System.out.println("Introduce primer número: ");
 		numero1 = sc.nextInt();
 		
@@ -50,22 +44,14 @@ public class DosNumeros {
 		mostrarNumero(numero1);
 		mostrarNumero(numero2);
 		
-		// Llenar el Array de 10 números aleatorios
+		// Ejecutar método para rellenar el Array con 10 números enteros aleatorios
 		llenarArray();
 		
-		
-		// Muestra por pantalla un menu
-		System.out.println("\nElije una opcion:");
-		System.out.println("  	1. sumar los números");
-		System.out.println("  	2. restar los números");
-		System.out.println("	3. multiplicar los números");
-		System.out.println("	4. dividir los números");
-		System.out.println("	5. Leer array del 10 numeros");
-		System.out.println("	6. Salir");
 		
 		
 		boolean verdadero = true;
 		while(verdadero) {
+			mostrarMenu();
 			int opcion = sc.nextInt();
 			
 			switch (opcion) {
@@ -82,8 +68,9 @@ public class DosNumeros {
 					break;
 		
 				case 4:
+					// comprobar que el divisor no es cero
 					if (numero2 == 0) {
-						System.out.println("Error division por cero");
+						System.out.println("Error division por cero no es válida, elija otra opción");
 					}else {
 						System.out.println("La división de los dos número introducidos es: " + division((double)numero1,(double)numero2));
 					}
@@ -98,42 +85,60 @@ public class DosNumeros {
 					System.out.println("Fin del programa");
 					verdadero = false;
 					break;
+				default:
+					System.out.println("Introduzca una opción válida");
 			}
 		};
 		
 		
 		
-	
-	
-	// Se declaran los métodos	
-		
 	}
 	
+	//Declarar metodo mostrar menu
 	
+	private static void mostrarMenu() {
+		// Muestra por pantalla un menu
+		System.out.println("\nElije una opcion:");
+		System.out.println("  	1. sumar los números");
+		System.out.println("  	2. restar los números");
+		System.out.println("	3. multiplicar los números");
+		System.out.println("	4. dividir los números");
+		System.out.println("	5. Leer array del 10 numeros");
+		System.out.println("	6. Salir");
+		
+		
+	}
+
+
+	// Declarar el método mostrar número
 	private static void mostrarNumero(int num) {
 		System.out.print(num + " ");
 		
 	}
 
 
-	
+	// Declarar el método suma
 	public static int suma(int x, int y) {
 		return x + y;
 	}
 	
+	// Declarar el método resta
 	public static int resta(int x, int y) {
 		return x - y;
 	}
 	
+	// Declarar el método producto
 	public static int producto(int x, int y) {
 		return x * y;
 	}
 	
+	// Declarar el método division
 	public static double division(double x, double y) {
 		
 		return x / y;
 	}
 	
+	// Declarar el método llenarArray
 	public static void llenarArray() {
 		
 		for (int i = 0; i < enteros.length; i++) {
@@ -143,9 +148,10 @@ public class DosNumeros {
 		
 	}
 	
+	
+	// Mostrar el contenido del array
 	public static void mostrarArray() {
-		
-		
+			
 		for (int numero : enteros) {
 			System.out.print(numero + " ");
 		}

@@ -83,13 +83,14 @@ public class Libro {
 		this.precio = precio;
 	}
 
+	// Declaración método toString
 	@Override
 	public String toString() {
 		return "Libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", categoria=" + categoria
 				+ ", anyo=" + anyo + ", precio=" + precio + "]";
 	}
 	
-	// Declaración método toString
+	
 	
 	
 	
