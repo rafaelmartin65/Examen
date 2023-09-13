@@ -36,6 +36,10 @@ public class Main {
 		alumno.setApellidos("Martin");
 		alumno.setEdad(58);
 		
+		// Creara un Alumno
+		alumno.setNombre("pepe");
+		alumno.setApellidos("Martin");
+		alumno.setEdad(58);
 		alumnos.add(alumno);
 		
 		System.out.println(alumnos.toString());
